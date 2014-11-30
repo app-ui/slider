@@ -6,13 +6,19 @@
 	// Fires when an instance of the element is created
 	el.createdCallback = function() {
 
-		// gather options
+		// gather attributes
+		var min = this.getAttribute("min");
+		var max = this.getAttribute("max");
+		var step = this.getAttribute("step");
+		// set options
 		var options = {
-			max: 100, // use attributes for min/max values
 			url: "../assets/html/app.ui.slider.html"// use template html instead...
 		};
+		if(min) options.min = min;
+		if(max) options.max = max;
+		if(step) options.step = step;
 		// ...
-		options.el = $(this);
+		options.el = this;
 		// instantiate view
 		if( view === null ) view = new APP.UI.Slider( options );
 
