@@ -1,7 +1,7 @@
 {
-	"name": "app.ui.component",
+	"name": "app.ui.slider",
 	"version": "0.1.0",
-	"description": "APP UI: Component",
+	"description": "APP UI: Slider",
 	"license": "MIT",
 	"main": "index.html",
 	"keywords": [
@@ -14,6 +14,6 @@
 	],
 	"dependencies": {
 		"webcomponentsjs": "*",
-		"app" : "*"
+		"app" : "0.2.0"
 	}
 }
