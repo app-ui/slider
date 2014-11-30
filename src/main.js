@@ -1,25 +1,35 @@
 (function() {
 	// Creates an object based in the HTML Element prototype
-	var element = Object.create(HTMLElement.prototype);
-	var view;
+	var el = Object.create(HTMLElement.prototype);
+	var view = null;
 
 	// Fires when an instance of the element is created
-	element.createdCallback = function() {
+	el.createdCallback = function() {
+
+		// gather options
+		var options = {
+			max: 100, // use attributes for min/max values
+			url: "../assets/html/app.ui.slider.html"// use template html instead...
+		};
+		// ...
+		options.el = $(this);
 		// instantiate view
-		view = new APP.UI.Component();
+		if( view === null ) view = new APP.UI.Slider( options );
 
 	};
 
 	// Fires when an instance was inserted into the document
-	element.attachedCallback = function() {};
+	el.attachedCallback = function() {};
 
 	// Fires when an instance was removed from the document
-	element.detachedCallback = function() {};
+	el.detachedCallback = function() {
+		view.destroy();
+	};
 
 	// Fires when an attribute was added, removed, or updated
-	element.attributeChangedCallback = function(attr, oldVal, newVal) {};
+	el.attributeChangedCallback = function(attr, oldVal, newVal) {};
 
-	document.registerElement('ui-component', {
-		prototype: element
+	document.registerElement('ui-slider', {
+		prototype: el
 	});
 }());
