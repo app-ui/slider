@@ -12,6 +12,7 @@
 		var step = this.getAttribute("step");
 		// set options
 		var options = {
+			silentRender: true, // this is required to avoid an infinite loop (triggering createdCallback on .show() )
 			url: "../assets/html/app.ui.slider.html"// use template html instead...
 		};
 		if(min) options.min = min;
