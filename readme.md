@@ -10,43 +10,57 @@ Part of [APP UI](http://github.com/app-ui)
 * [Click to view](./examples/index.html)
 
 
+## Dependencies
+
+This component relies on the following third-party libraries:
+
+* [APP](http://makesites.org/projects/app)
+* [jQuery](http://jquery.com)
+* [Underscore](http://underscorejs.org)
+
+
 ## Install
 
-Using bower:
+Download the component and extract in 'components/app-ui-slider'
+```
+cd [project folder]
+wget https://github.com/app-ui/slider/archive/master.zip
+unzip master.zip -d ./components/
+```
+
+Using bower: (Old method)
 ```
 bower install app.ui.slider
 ```
 
-Import from github
-```
-git pull git://github.com/app-ui/slider.git master
-```
-
-The component contains all the basic structure to get started. The component. The stylesheet is created using Less and then been compiled to a plain CSS file. It's your choice if you want to continue developing in Less or CSS.
-
-
 
 ## Usage
 
-1. Import Web Components' polyfill
+The component is built on top of [APP](http://makesites.org/projects/app) which should be loaded before the component in the <head> section of your website. This library uses the non-standard method of "html imports" for loading custom elements. 
+
+
+1. Include APP library
 
 ```html
-<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+<script src="components/app/build/app.min.js"></script>
 ```
 
 2. Import Custom Element:
 ```html
-<link rel="import" href="bower_components/app.ui.slider">
+<link rel="import" href="components/app-ui-slider">
 ```
 
 3. Start using it!
 
 ```html
-<ui-slider></ui-slider>
+<div is="app-ui-slider"></div>
 ```
+Currently the component extends the ```<div>``` tag.
 
 
 ## Options
+
+These are the set of options you can use as attributes in your custom element:
 
 ...
 
@@ -58,13 +72,15 @@ The component contains all the basic structure to get started. The component. Th
 
 ## Credits
 
-Initiated by Makis Tracend ( [@tracend](http://github.com/tracend) )
+Originally based on [Backbone.UI.Slider](https://github.com/backbone-ui/slider) by Lyndel Thomas ( [@ryndel](http://github.com/ryndel) )
 
-Based on the Backbone UI plugin by Lyndel Thomas ( [@ryndel](http://github.com/ryndel) )
+Initiated by Makis Tracend ( [@tracend](http://github.com/tracend) )
 
 Distributed through [Makesites.org](http://makesites.org/)
 
 
-## License
+### License
 
 Released under the [MIT License](http://makesites.org/licenses/MIT)
+
+
